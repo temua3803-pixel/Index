@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Монетки</title>
+    <style>
+        body { background: #1e1e2f; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+        .btn { background: #ffb347; border: none; padding: 15px 30px; border-radius: 30px; margin: 5px; cursor: pointer; font-size: 16px; }
+        .balance { font-size: 28px; color: gold; }
+    </style>
+</head>
+<body>
+    <h1>⭐ Твои монетки</h1>
+    <p class="balance" id="balance">0</p>
+    <button class="btn" onclick="spin()">🎰 Спин</button>
+    <button class="btn" onclick="shop()">🏪 Магазин</button>
+    <button class="btn" onclick="profile()">👤 Профиль</button>
+
+    <script>
+        let balance = 0;
+
+        function spin() {
+            let reward = Math.floor(Math.random() * 100) + 1;
+            balance += reward;
+            document.getElementById('balance').innerText = balance;
+            alert('🎲 Выпало: ' + reward + ' ⭐');
+        }
+
+        function shop() {
+            alert('🛒 Магазин скоро будет');
+        }
+
+        function profile() {
+            alert('👤 Твой баланс: ' + balance + ' ⭐');
+        }
+    </script>
+</body>
+</html>
